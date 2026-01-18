@@ -1,10 +1,10 @@
 
-import React, { useState } from "react";
-import { Text, View, TextInput, Pressable } from "react-native";
+import { useRouter } from "expo-router";
+import React from "react";
+import { Text, View, TouchableOpacity } from "react-native";
 
-function Index() {
-  const [value, setValue] = useState("");
-  const [submitted, setSubmitted] = useState("");
+export default function Index() {
+  const router = useRouter();
 
   return (
     <View
@@ -20,44 +20,9 @@ function Index() {
         Enter text below
       </Text>
 
-      <TextInput
-        value={value}
-        onChangeText={setValue}
-        placeholder="Type something..."
-        placeholderTextColor="#ddd"
-        style={{
-          width: "100%",
-          maxWidth: 400,
-          backgroundColor: "rgba(255,255,255,0.12)",
-          color: "#fff",
-          padding: 10,
-          borderRadius: 8,
-          marginBottom: 12,
-        }}
-      />
-
-      <Pressable
-        onPress={() => {
-          setSubmitted(value);
-          setValue("");
-        }}
-        style={{
-          backgroundColor: "#fff",
-          paddingVertical: 10,
-          paddingHorizontal: 16,
-          borderRadius: 8,
-        }}
-      >
-        <Text style={{ color: "#000" }}>Submit</Text>
-      </Pressable>
-
-      {submitted !== "" && (
-        <Text style={{ color: "#fff", marginTop: 16 }}>
-          Submitted: {submitted}
-        </Text>
-      )}
+      <TouchableOpacity onPress={() => router.push('/testing')}>
+        <Text>change route</Text>
+      </TouchableOpacity>
     </View>
   );
 }
-
-export default Index;
