@@ -17,11 +17,11 @@ export default function Index() {
       }}
     >
       <Text className="text-white text-2xl font-bold" style={{ marginBottom: 12 }}>
-        Enter text below
+        Edit app/index.jsx to change this screen
       </Text>
 
-      <TouchableOpacity onPress={() => router.push('/testing')}>
-        <Text>change route</Text>
+      <TouchableOpacity onPress={() => router.push('/home')}>
+        <Text style={{ color: 'white', fontSize: 18 }}>change route</Text>
       </TouchableOpacity>
     </View>
   );
